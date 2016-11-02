@@ -24,7 +24,7 @@ class PagesController < ApplicationController
 
 	def contest
 		flash[:notice] = "Sorry, the contest has ended"
-		redirect_to '/welcome'
+		redirect_to welcome_url
 	end
 
 	def secrets
@@ -34,7 +34,7 @@ class PagesController < ApplicationController
 			render :secrets
 		else
 			flash[:notice] = "Sorry, you dont have the right password"
-			redirect_to '/welcome'
+			redirect_to welcome_url
 		end
 	end
 end
