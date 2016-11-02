@@ -14,7 +14,7 @@ class PagesController < ApplicationController
 	end
 
 	def kittens
-		
+
 	end
 
 	def set_kitten_url
@@ -23,6 +23,7 @@ class PagesController < ApplicationController
 	end
 
 	def contest
-		@header = "step right up, see what youll probably not win.."
+		flash[:notice] = "Sorry, the contest has ended"
+		redirect_to '/welcome'
 	end
 end
