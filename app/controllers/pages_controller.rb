@@ -26,4 +26,15 @@ class PagesController < ApplicationController
 		flash[:notice] = "Sorry, the contest has ended"
 		redirect_to '/welcome'
 	end
+
+	def secrets
+		password = "test"
+		input = params[:magic_word]
+		if input == password
+			render :secrets
+		else
+			flash[:notice] = "Sorry, you dont have the right password"
+			redirect_to '/welcome'
+		end
+	end
 end
